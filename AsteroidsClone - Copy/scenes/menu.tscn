@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://themes/orbitrone_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/menu.gd" type="Script" id=2]
+
+[node name="menu" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="play" type="Button" parent="CanvasLayer/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -136.0
+margin_top = -44.5
+margin_right = 136.0
+margin_bottom = 44.5
+theme = ExtResource( 1 )
+text = "Play"
+
+[connection signal="button_down" from="CanvasLayer/Panel/play" to="." method="_on_play_button_down"]
